@@ -1,0 +1,24 @@
+{
+  "name": "dems",
+  "version": "1.0.0",
+  "description": "Digital Evidence Management System",
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "backend": "npm run dev --prefix backend",
+    "frontend": "npm start --prefix frontend",
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "setup": "npm run install:all && echo '\\n✅ Installation complete!\\n📋 Next: Set up PostgreSQL and run: backend/database/schema.sql\\n🔧 Then: Copy backend/.env.example to backend/.env and fill in values\\n🚀 Then: npm start'"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.1.1",
+    "pg": "^8.20.0"
+  }
+}
